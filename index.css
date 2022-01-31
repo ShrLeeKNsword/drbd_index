@@ -1,0 +1,44 @@
+@font-face {
+	font-family: "SourceHanSerifCN-ExtraLight";
+	src: url("word-style/思源宋体-SC-Bold.otf") format("opentype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "明天圆体MRT-まるこいあすβ";
+	src: url("word-style/明天圆体MRT-まるこいあすβ.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+.html {
+	font-family: "SourceHanSerifCN-ExtraLight";
+	font-size: 30px;
+	max-width: 1000px;
+	min-width: 700px;
+}
+
+.box-card {
+	.text {
+		font-size: 14px;
+	}
+
+	.item {
+		margin-bottom: 18px;
+	}
+
+	.clearfix:before,
+	.clearfix:after {
+		display: table;
+		content: "";
+	}
+
+	.clearfix:after {
+		clear: both
+	}
+
+	.box-card {
+		width: 480px;
+	}
+}

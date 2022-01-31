@@ -1,24 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='zh-CN'>
 	<head>
 		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width,initial-scale=1.0">
-		<link rel="icon" href="<%= BASE_URL %>favicon.ico">
-		<!-- 引入样式 -->
+		<meta name="keywords" content="DRBD,弹丸论破,danganronpa,同人,游戏,rpg">
+		<meta name="description" content="DRBD 弹丸论破同人游戏发布页">
+		<title>DRBD 弹丸论破同人游戏发布页</title>
+		<script src="script/vue.js" type="text/javascript" charset="UTF-8"></script>
+		<link href="https://cdn.bootcdn.net/ajax/libs/animate.css/4.1.1/animate.compat.css" rel="stylesheet">
+		<link href="index.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-		<!-- 引入组件库 -->
-		<title>弹丸论破DRBD</title>
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		<script src="https://kit.fontawesome.com/6861b7b8a4.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" type="text/css" href="index.css">
 	</head>
 	<body>
-		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
-		<noscript>
-			<strong>弹丸论破DRBD官网</strong>
-		</noscript>
-		<div id="app">
-			<el-divider content-position="left">快速游戏</el-divider>
-			<el-button type="text" @click="dialogVisible = true">在线游戏</el-button>
+		<div id="vm">
+			<div>
+				<div class="demo-image__placeholder">
+					<div class="block">
+						<el-image :src="top_img_scr">
+							<div slot="placeholder" class="image-slot">
+								加载中<span class="dot">...</span>
+							</div>
+						</el-image>
+					</div>
+				</div>
+
+				<script>
+					export default {
+						data() {
+							return {
+								src: 'img/top.png'
+							}
+						}
+					}
+				</script>
+			</div>
+			<div>
+				<template>
+
+					<el-divider content-position="left">快速游戏</el-divider>
+
+					<el-card class="box-card">
+						<div slot="header" class="clearfix">
+							<span>在线网页游戏</span>
+							<el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+						</div>
+
+						<div class="text item">
+
+							<span>不推荐使用流量进入<strong>右边的链接[game.drbd.tk]</strong>请认真阅读我们的在线游戏条例</span>
+
+							<el-divider direction="vertical"></el-divider>
+							<el-popover placement="top-start" title="标题" width="200" trigger="hover" content="点击进入游戏">
+								<el-button type="primary" plain @click="dialogVisible = true">快速游戏</el-button>
+
+								<el-dialog title="游戏条约" :visible.sync="dialogVisible" width="30%"
+									:before-close="handleClose">
+									<span>
+										<el-tree :data="tree_data" :props="defaultProps" @node-click="handleNodeClick">
+										</el-tree>
+									</span>
+									<span slot="footer" class="dialog-footer">
+										<el-button @click="dialogVisible = false">取 消</el-button>
+										<a href="https://game.drbd.tk">
+											<el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+										</a>
+									</span>
+
+									<script scr="script/web_warning.js"></script>
+
+								</el-dialog>
+							</el-popover>
+						</div>
+					</el-card>
+					<el-card class="box-card">
+						<div slot="header" class="clearfix">
+							<span>WINDOWS离线版</span>
+							<el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+						</div>
+
+						<div class="text item">
+							<span>支持系统<strong>[WindowsXP(不推荐),Windows7及以上版本]</strong>请按照安装程序指示完成安装</span>
+							<el-divider direction="vertical"></el-divider>
+							<a href="https://windows.drbd.tk">
+								<el-button type="primary" plain>现在下载</el-button>
+							</a>
+						</div>
+					</el-card>
+
+				</template>
+				<template>
+					<el-backtop target=".page-component__scroll .el-scrollbar__wrap"></el-backtop>
+				</template>
+			</div>
 		</div>
-		<!-- built files will be auto injected -->
+
+
+		<script type="text/javascript">
+			var data = {
+				ver_num: '0.0.0',
+				top_img_scr: 'img/top.png',
+				tree_data: [{
+					label: '一级 1',
+					children: [{
+						label: '二级 1-1',
+						children: [{
+							label: '三级 1-1-1'
+						}]
+					}]
+				}, {
+					label: '一级 2',
+					children: [{
+						label: '二级 2-1',
+						children: [{
+							label: '三级 2-1-1'
+						}]
+					}, {
+						label: '二级 2-2',
+						children: [{
+							label: '三级 2-2-1'
+						}]
+					}]
+				}, {
+					label: '一级 3',
+					children: [{
+						label: '二级 3-1',
+						children: [{
+							label: '三级 3-1-1'
+						}]
+					}, {
+						label: '二级 3-2',
+						children: [{
+							label: '三级 3-2-1'
+						}]
+					}]
+				}],
+				defaultProps: {
+					children: 'children',
+					label: 'label'
+				}
+			};
+			},
+			methods: {
+				handleNodeClick(data) {
+					console.log(data);
+				}
+			}
+			};
+
+			var vm = new Vue({
+				el: '#vm',
+				data: data,
+			});
+		</script>
 	</body>
 </html>
