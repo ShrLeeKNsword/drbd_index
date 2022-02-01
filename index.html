@@ -14,6 +14,7 @@
 		<link rel="stylesheet" type="text/css" href="index.css">
 	</head>
 	<body>
+		<!--info>这里插一句广告应该没人看见吧……欢迎访问[sea.rpgca.tk]</!-->
 		<div id="vm">
 			<div>
 				<div class="demo-image__placeholder">
@@ -31,6 +32,8 @@
 
 					<el-divider content-position="left">开始游戏 (版本{{ver_num}})</el-divider>
 
+					<!--info>这里快速开始游戏</!-->
+
 					<el-card class="box-card">
 						<div slot="header" class="clearfix">
 							<span>在线网页游戏</span>
@@ -38,50 +41,132 @@
 
 						<div class="text item">
 
-							<span>不推荐使用流量进入<strong>右边的链接[game.drbd.tk]</strong>请认真阅读我们的在线游戏条例</span>
+							<el-row>
+								<el-col :span="20">
 
-							<el-divider direction="vertical"></el-divider>
-							<el-button type="primary" plain @click="dialogVisible = true">快速游戏</el-button>
+									<span>不推荐使用流量进入<strong>右边的链接[game.drbd.tk]</strong>请认真阅读我们的在线游戏条例</span>
 
-							<el-dialog title="游戏条约" :visible.sync="dialogVisible" width="30%"
-								:before-close="handleClose">
-								<span>
-									服务条款待定，目前测试阶段，请适度游戏，勿沉迷！
-								</span>
-								<span slot="footer" class="dialog-footer">
-									<el-button @click="dialogVisible = false">取 消</el-button>
-									<a href="https://game.drbd.tk">
-										<el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-									</a>
-								</span>
+								</el-col>
+								<el-col :span="4">
 
-								<script>
-									export default {
-										methods: {
-											handleClose(done) {
-												this.$confirm('确认关闭？')
-													.then(_ => {
-														done();
-													})
-													.catch(_ => {});
-											}
-										}
-									};
-								</script>
-							</el-dialog>
+									<el-divider direction="vertical"></el-divider>
+									<el-button type="primary" plain @click="dialogVisible = true">快速游戏</el-button>
+
+									<el-dialog title="游戏条约" :visible.sync="dialogVisible" width="30%"
+										:before-close="handleClose">
+										<span>
+											服务条款待定，目前测试阶段，请适度游戏，勿沉迷！
+										</span>
+										<span slot="footer" class="dialog-footer">
+											<el-button @click="dialogVisible = false">取 消</el-button>
+											<a href="https://game.drbd.tk">
+												<el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+											</a>
+										</span>
+
+										<script>
+											export default {
+												methods: {
+													handleClose(done) {
+														this.$confirm('确认关闭？')
+															.then(_ => {
+																done();
+															})
+															.catch(_ => {});
+													}
+												}
+											};
+										</script>
+									</el-dialog>
+
+								</el-col>
+							</el-row>
+
 						</div>
 					</el-card>
 					<el-card class="box-card">
 						<div slot="header" class="clearfix">
-							<span>WINDOWS离线版</span>
+							<span>离线安装版</span>
 						</div>
 
 						<div class="text item">
-							<span>支持系统<strong>[WindowsXP(不推荐),Windows7及以上版本]</strong>请按照安装程序指示完成安装</span>
-							<el-divider direction="vertical"></el-divider>
-							<a href="https://windows.drbd.tk">
-								<el-button type="primary" plain>现在下载</el-button>
-							</a>
+
+							<el-row>
+								<el-col :span="20">
+
+									<span>支持系统<strong>[请到具体页面查看]</strong>请按照安装程序指示完成安装</span>
+
+								</el-col>
+								<el-col :span="4">
+
+									<el-divider direction="vertical"></el-divider>
+									<a href="https://windows.drbd.tk">
+										<el-button type="primary" plain>前去下载</el-button>
+									</a>
+
+								</el-col>
+							</el-row>
+
+						</div>
+					</el-card>
+
+					<el-divider content-position="left">游戏介绍</el-divider>
+
+					<!--info>这里开始游戏介绍</!-->
+
+					<el-card class="box-card">
+						<div slot="header" class="clearfix">
+							<span>引图</span>
+						</div>
+
+						<div class="text item">
+
+							<span>
+								<template>
+									<div class="demo-image__placeholder">
+										<div class="block">
+											<el-image :src="hot_img_scr">
+												<div slot="placeholder" class="image-slot">
+													加载中<span class="dot">...</span>
+												</div>
+											</el-image>
+										</div>
+									</div>
+								</template>
+
+								<style>
+									.el-carousel__item h3 {
+										color: #475669;
+										font-size: 14px;
+										opacity: 0.75;
+										line-height: 200px;
+										margin: 0;
+									}
+
+									.el-carousel__item:nth-child(2n) {
+										background-color: #99a9bf;
+									}
+
+									.el-carousel__item:nth-child(2n+1) {
+										background-color: #d3dce6;
+									}
+								</style>
+							</span>
+
+						</div>
+					</el-card>
+
+					<el-card class="box-card">
+						<div slot="header" class="clearfix">
+							<span>简介</span>
+						</div>
+
+						<div class="text item">
+
+							<span>
+								啊呀，简介不见了？！
+							</span>
+
 						</div>
 					</el-card>
 
@@ -97,7 +182,9 @@
 			var data = {
 				ver_num: '0.0.0',
 				top_img_scr: 'img/top.png',
-				dialogVisible: false
+				hot_img_scr: 'img/hot.png',
+				dialogVisible: false,
+				item: 0
 			};
 
 			var vm = new Vue({
