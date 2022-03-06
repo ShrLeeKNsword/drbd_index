@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+	<head>
+		<title>人机检验</title>
+		<meta charset='UTF-8'>
+		<meta http-equiv='X-UA-Compatible'>
+		<meta name='viewport' content='width=device-width,initial-scale=1.0'>
+        <style>
+		    *{
+	            margin: 0;
+            	padding: 0;
+            	user-select: none;
+            	box-sizing: border-box;
+            }
+
+            html,
+            body{
+            	display: flex;
+            	justify-content: center;
+            	align-items: center;
+	            width: 100%;
+	            height: 100%;
+            }
+
+            .box{
+	            width: 400px;
+	            height: 220px;
+	            position: relative;
+            	overflow: hidden;
+            	box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2);
+            }
+
+            .white{
+	            width: 80px;
+	            height: 70px;
+             	position: absolute;
+                background: white;
+	            left: 200px;
+	            top: 50px;
+            }
+
+            .imgbox{
+            	width: 100%;
+            	height: 95%;
+				position: relative;
+				background: #95BBFF;
+			}		
+
+			.btnbox{
+				width: 80px;
+				height: 100%;
+				text-align: center;
+				box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2);
+
+			}
+
+			.btnboximg{
+				width: 80px;
+				height: 70px;
+				position: absolute;
+				box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2);
+				top: 50px;
+			}
+
+			.btn{
+				width: 80px;
+				height: 10px;
+				position: absolute;
+				bottom: 0px;
+				background: #CCCCCC;
+			}
+		</style>
+	</head>
+	<body>
+	    <div class='box'>
+		    <div class='imgbox'>
+			    <div class='white'></div>
+			</div>
+	        <div class='btnbox'>
+		        <div class='btnboximg'></div>
+	    		<div class='btn'></div>
+	    	</div>
+		</div>
+	    <script>
+			var btn = document.getElementsByClassName("btn")[0];
+			var btnbox = document.getElementsByClassName("btnbox")[0];
+			btn.onmousedown = function(ev){
+				var oEvent = ev || event;
+				var x = oEvent.clientx - btnbox.offsetleft;
+				var left;
+				document.onmousemove = function(ev){
+					var oEvent = ev || event;
+					var x1 = oEvent.clientx - x;
+					btnbox.style.left = x1 + "px";
+					left = x1;
+				};
+				document.onmouseup = function(ev){
+					document.onmousedown = null;
+					document.onmousemove = null;
+					if (left == 200){
+						alert("验证通过");
+					}else{
+						alert("验证失败");
+						btnbox.style.left = "40px";
+					};
+				};
+			};
+
+		</script>
+	</body>
+</html>
