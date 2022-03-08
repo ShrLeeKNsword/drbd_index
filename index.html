@@ -52,7 +52,7 @@
 									<el-divider direction="vertical"></el-divider>
 									<el-button type="primary" plain @click="dialogVisible = true">快速游戏</el-button>
 
-									<el-dialog title="游戏条约" :visible.sync="dialogVisible" width="30%"
+									<el-dialog title="游戏条约" :visible.sync="dialogVisible" width="80%"
 										:before-close="handleClose">
 										<span>
 											<ul>
@@ -62,7 +62,8 @@
 												<li>4.请适度游玩，勿沉迷、勿疲劳，健康游戏.</li><br>
 												<li>5.本游戏可以录屏，但不允许任何形式的恶意破解、盗图、网络攻击.</li><br>
 												<li>6.本游戏<strong>容量较大</strong>，不建议在流量环境下进入.</li><br>
-												<li>6.如有Bug反馈或其他问题，请联系站长邮箱<a href="mail@drbd.tk">mail@drbd.tk</a>.</li><br>
+												<li>6.如有Bug反馈或其他问题，请联系站长邮箱<a href="mail@drbd.tk">mail@drbd.tk</a>.</li>
+												<br>
 											</ul>
 										</span>
 										<span slot="footer" class="dialog-footer">
@@ -122,46 +123,68 @@
 
 					<!--info>这里开始游戏介绍</!-->
 
-					<el-card class="box-card">
-						<div slot="header" class="clearfix">
-							<span>引图</span>
-						</div>
+					<div class="text item">
+						<el-card class="box-card">
+							<div slot="header" class="clearfix">
+								<span>公告</span>
+							</div>
 
-						<div class="text item">
+							<div class="text item">
 
-							<span>
-								<template>
-									<div class="demo-image__placeholder">
-										<div class="block">
-											<el-image :src="hot_img_scr">
-												<div slot="placeholder" class="image-slot">
-													加载中<span class="dot">...</span>
+								<el-row>
+									<el-col :span="10">
+
+										<span>
+											<template>
+												<div class="demo-image__placeholder">
+													<div class="block">
+														<el-image :src="hot_img_scr">
+															<div slot="placeholder" class="image-slot">
+																加载中<span class="dot">...</span>
+															</div>
+														</el-image>
+													</div>
 												</div>
-											</el-image>
-										</div>
-									</div>
-								</template>
+											</template>
 
-								<style>
-									.el-carousel__item h3 {
-										color: #475669;
-										font-size: 14px;
-										opacity: 0.75;
-										line-height: 200px;
-										margin: 0;
-									}
+											<style>
+												.el-carousel__item h3 {
+													color: #475669;
+													font-size: 14px;
+													opacity: 0.75;
+													line-height: 200px;
+													margin: 0;
+												}
 
-									.el-carousel__item:nth-child(2n) {
-										background-color: #99a9bf;
-									}
+												.el-carousel__item:nth-child(2n) {
+													background-color: #99a9bf;
+												}
 
-									.el-carousel__item:nth-child(2n+1) {
-										background-color: #d3dce6;
-									}
-								</style>
-							</span>
+												.el-carousel__item:nth-child(2n+1) {
+													background-color: #d3dce6;
+												}
+											</style>
+										</span>
 
-						</div>
+									</el-col>
+									<el-col :span="14">
+										<!--这里插入公告-->
+
+									</el-col>
+								</el-row>
+
+							</div>
+						</el-card>
+
+
+
+						<el-card class="box-card">
+							<div slot="header" class="clearfix">
+								<span>游戏介绍</span>
+							</div>
+
+
+					</div>
 					</el-card>
 
 					<el-card class="box-card">
@@ -186,15 +209,16 @@
 						<div class="text item">
 
 							<span>
-								站长邮箱 <a href="mail@drbd.tk">mail@drbd.tk</a>
-								QQ聊天群 <a href="https://jq.qq.com/?_wv=1027&k=Xce7HBZu">571655864</a>
+								站长邮箱 <a style="text-decoration:none;border-radius: 1px,1px,1px,1px;border-color: #475669;" href="mail@drbd.tk">mail@drbd.tk</a><br>
+								QQ聊天群 <a style="text-decoration:none;border-radius: 1px,1px,1px,1px;border-color: #475669;" href="https://jq.qq.com/?_wv=1027&k=Xce7HBZu">571655864</a><br>
+								github站点 <a style="text-decoration:none;border-radius: 1px,1px,1px,1px;border-color: #475669;" href="https://github.com/ShrLeeKNsword/drbd_index"><i class="el-icon-collection"></i>点击跳转</a>
 							</span>
 
 						</div>
 					</el-card>
-					
+
 				</template>
-				
+
 				<template>
 					<el-backtop target=".page-component__scroll .el-scrollbar__wrap"></el-backtop>
 				</template>
