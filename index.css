@@ -42,3 +42,12 @@
 		width: 480px;
 	}
 }
+
+.bottom_info : {
+				bottom: 0px;
+				width: 100%;
+				background-color: #475669;
+				position: fixed;
+				text-align: center;
+				opacity: 1 ;
+}
