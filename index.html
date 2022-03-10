@@ -74,19 +74,6 @@
 											</a>
 										</span>
 
-										<script>
-											export default {
-												methods: {
-													handleClose(done) {
-														this.$confirm('确认关闭？')
-															.then(_ => {
-																done();
-															})
-															.catch(_ => {});
-													}
-												}
-											};
-										</script>
 									</el-dialog>
 
 								</el-col>
@@ -147,29 +134,12 @@
 													</div>
 												</div>
 											</template>
-
-											<style>
-												.el-carousel__item h3 {
-													color: #475669;
-													font-size: 14px;
-													opacity: 0.75;
-													line-height: 200px;
-													margin: 0;
-												}
-
-												.el-carousel__item:nth-child(2n) {
-													background-color: #99a9bf;
-												}
-
-												.el-carousel__item:nth-child(2n+1) {
-													background-color: #d3dce6;
-												}
-											</style>
 										</span>
 
 									</el-col>
 									<el-col :span="14">
 										<!--这里插入公告-->
+										啊哈哈哈，催逝员来喽~
 
 									</el-col>
 								</el-row>
@@ -209,40 +179,39 @@
 
 						<div class="text item">
 
-							<span style="padding: 2px 2px 2px 2px;border: 1px solid #55ffff;">
-								<el-row>
-									<el-col :span="12">
-										站长邮箱
-									</el-col>
-									<el-col :span="12"><a style="text-decoration:none;border: 1px solid #00aaff;"
-											href="mail@drbd.tk"><i class="el-icon-message"></i>mail@drbd.tk</a>
-									</el-col>
-									<br>
-									<el-col :span="12">
-										QQ聊天群
-									</el-col>
-									<el-col :span="12"><a style="text-decoration:none;border: 1px solid #00aaff;"
-											href="https://jq.qq.com/?_wv=1027&k=Xce7HBZu"><i
-												class="el-icon-user"></i>571655864</a>
-									</el-col>
-									<br>
-									<el-col :span="12">
-										github站点
-									</el-col>
-									<el-col :span="12"><a style="text-decoration:none;border: 1px solid #00aaff;"
-											href="https://github.com/ShrLeeKNsword/drbd_index"><i
-												class="el-icon-collection"></i>点击跳转</a>
-									</el-col>
-								</el-row>
-							</span>
+
+							<el-row>
+								<el-col :span="12">
+									站长邮箱
+								</el-col>
+								<el-col :span="12"><a style="text-decoration:none;border: 1px solid #00aaff;"
+										href="mail@drbd.tk"><i class="el-icon-message"></i>mail@drbd.tk</a>
+								</el-col>
+							</el-row>
+							<br>
+							<el-row>
+								<el-col :span="12">
+									QQ聊天群
+								</el-col>
+								<el-col :span="12"><a style="text-decoration:none;border: 1px solid #00aaff;"
+										href="https://jq.qq.com/?_wv=1027&k=Xce7HBZu"><i
+											class="el-icon-user"></i>571655864</a>
+								</el-col>
+							</el-row>
+							<br>
+							<el-row>
+								<el-col :span="12">
+									github站点
+								</el-col>
+								<el-col :span="12"><a style="text-decoration:none;border: 1px solid #00aaff;"
+										href="https://github.com/ShrLeeKNsword/drbd_index"><i
+											class="el-icon-collection"></i>点击跳转</a>
+								</el-col>
+							</el-row>
 
 						</div>
 					</el-card>
 
-				</template>
-
-				<template>
-					<el-backtop target=".page-component__scroll .el-scrollbar__wrap"></el-backtop>
 				</template>
 			</div>
 		</div>
@@ -252,6 +221,7 @@
 				下滑以查看更多
 			</span>
 		</div>
+
 
 		<script type="text/javascript">
 			var data = {
@@ -265,25 +235,17 @@
 			var vm = new Vue({
 				el: '#vm',
 				data: data,
-			});
-			
-			var bif = document.getElementsByClassName("bottom_info")[0];
-			
-			window.onscroll = function() {
-			  //为了保证兼容性，这里取两个值，哪个有值取哪一个
-			  //scrollTop就是触发滚轮事件时滚轮的高度
-			  var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-			  console.log("滚动距离" + scrollTop);
-			  if (scrollTop <= 50){
-				  console.log("页面变化中");
-				  var bif_alpha = 1 - scrollTop * 0.02 ;
-				  bif.style.opacity = bif_alpha;
-			  }else{
-				  console.log("页面不变化");
-			  }
-			}
+				methods: {
+					handleClose(done) {
+						this.$confirm('确认关闭？')
+							.then(_ => {
+								done();
+							})
+							.catch(_ => {});
+					}
+				}
 
-			
+			});
 		</script>
-	</body>-
+	</body>
 </html>
