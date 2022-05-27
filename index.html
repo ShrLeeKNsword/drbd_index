@@ -17,6 +17,20 @@
 		<!--info>这里插一句广告应该没人看见吧……欢迎访问[sea.rpgca.tk]</!-->
 
 		<div id="vm"  style='padding-left: 20px;padding-right: 20px;background-color: #e1ff76;'>
+			<el-backtop target=".page-component__scroll .el-scrollbar__wrap" :bottom="100">
+   				<div style="{
+        				height: 100%;
+  				        width: 100%;
+   					background-color: #f2f5f6;
+        				box-shadow: 0 0 6px rgba(0,0,0, .12);
+        				text-align: center;
+       					line-height: 40px;
+       					color: #1989fa;
+      					}"
+    					>
+      					顶部
+    				</div>
+			</el-backtop>
 			<br>
 			<div>
 				<div class="demo-image__placeholder">
@@ -216,19 +230,6 @@
 						</div>
 					</el-card>
 					<br>
-					<el-backtop target=".page-component__scroll .el-scrollbar__wrap" :bottom="100">
-   					<div style="{
-        					height: 100%;
-  					        width: 100%;
-   						background-color: #f2f5f6;
-        					box-shadow: 0 0 6px rgba(0,0,0, .12);
-        					text-align: center;
-        					line-height: 40px;
-        					color: #1989fa;
-      						}"
-    						>
-      						顶
-    					</div>
 
 				</template>
 			</div>
