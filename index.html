@@ -51,7 +51,9 @@
 								<el-col :span="4">
 
 									<el-divider direction="vertical"></el-divider>
-									<el-button type="primary" plain @click="dialogVisible = true">快速游戏</el-button>
+									<el-tooltip class="item" effect="dark" content="点我！点我！" placement="top">
+										<el-button type="primary" plain @click="dialogVisible = true">快速游戏</el-button>
+									</el-tooltip>
 
 									<el-dialog title="游戏条约" :visible.sync="dialogVisible" width="80%"
 										:before-close="handleClose">
@@ -69,9 +71,9 @@
 										</span>
 										<span slot="footer" class="dialog-footer">
 											<el-button @click="dialogVisible = false">取 消</el-button>
-											<a href="https://game.drbd.tk">
+											<a href="https://game.drbd.tk"><el-tooltip class="item" effect="dark" content="真的好好看了吗？" placement="top">
 												<el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-											</a>
+											</el-tooltip></a>
 										</span>
 
 									</el-dialog>
@@ -99,7 +101,9 @@
 
 									<el-divider direction="vertical"></el-divider>
 									<a href="https://download.drbd.tk">
-										<el-button type="primary" plain>前去下载</el-button>
+										<el-tooltip class="item" effect="dark" content="点我！点我！" placement="top">
+											<el-button type="primary" plain>前去下载</el-button>
+										</el-tooltip>
 									</a>
 
 								</el-col>
@@ -183,8 +187,8 @@
 								<el-col :span="12">
 									站长邮箱
 								</el-col>
-								<el-col :span="12"> <el-link type="primary"
-										href="mail@drbd.tk"><i class="el-icon-message"></i>mail@drbd.tk</el-link>
+								<el-col :span="12"><el-tooltip class="item" effect="dark" content="站长的邮箱 也许可以用来……" placement="top"><el-link type="primary"
+										href="https://mail@drbd.tk"><i class="el-icon-message"></i>mail@drbd.tk</el-link>
 								</el-col>
 							</el-row>
 							<br>
@@ -192,7 +196,7 @@
 								<el-col :span="12">
 									QQ聊天群
 								</el-col>
-								<el-col :span="12"> <el-link type="primary"
+								<el-col :span="12"><el-tooltip class="item" effect="dark" content="快来加群畅聊吧！" placement="top"><el-link type="primary"
 										href="https://jq.qq.com/?_wv=1027&k=Xce7HBZu"><i
 											class="el-icon-user"></i>571655864 </el-link>
 								</el-col>
@@ -202,7 +206,7 @@
 								<el-col :span="12">
 									github站点
 								</el-col>
-								<el-col :span="12"> <el-link type="primary"
+								<el-col :span="12"><el-tooltip class="item" effect="dark" content="这里会有什么小秘密呢？" placement="top"><el-link type="primary"
 										href="https://github.com/ShrLeeKNsword/drbd_index"><i
 											class="el-icon-collection"></i>点击跳转 </el-link">
 								</el-col>
