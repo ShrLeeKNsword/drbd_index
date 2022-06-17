@@ -16,7 +16,7 @@
 	<body>
 		<!--info>这里插一句广告应该没人看见吧……欢迎访问[sea.rpgca.tk]</!-->
 
-		<div id="vm"  style='padding-left: 20px;padding-right: 20px;background-color: #e1ff76;'>
+		<div id="vm"  style="padding-left: 20px;padding-right: 20px;background-color: #e1ff76;">
 			<el-backtop target=".page-component__scroll .el-scrollbar__wrap" :bottom="100">
    				<div style="{
         				height: 100%;
@@ -244,6 +244,12 @@
 				dialogVisible: false,
 				item: 0
 			};
+			
+			function changeCursor(){
+				document.body.style.cursor="url('monokuma_dance.ani'),url('monokuma_danceM.ani'), default";
+			};
+			
+			changeCursor();
 
 			var vm = new Vue({
 				el: '#vm',
